@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page not found | CheatCode</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/jpg" href="./cheatcode.jpg">
+    <script src="https://kit.fontawesome.com/a47fae704c.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Afacad Flux", sans-serif;
+            line-height: 1.6;
+            background-color: #fef0e5;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 100px 100px 50px 100px;
+            background-color: #fff;
+            height: 80vh;
+        }
+
+        .header-section {
+            max-width: 50%;
+            text-align: left;
+        }
+
+        .header-section h1 {
+            font-size: 45px;
+            color: #333;
+            font-weight: 400;
+            margin-bottom: 20px;
+            text-align: left;
+            /* Add this line */
+        }
+        
+        .header-section b {
+            font-size: 50px;
+            color: #333;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-align: left;
+            /* Add this line */
+        }
+
+        .cta {
+            font-size: 22px;
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 30px;
+            text-align: left;
+            width: 100%;
+            /* Add this line */
+        }
+
+        .cta-buttons {
+            display: block;
+            gap: 20px;
+        }
+
+        .cta-button {
+            padding: 14px 28px;
+            background-color: #000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 20px;
+        }
+
+        .cta-button:hover {
+            background-color: #333;
+        }
+
+        .header-image {
+            max-width: 50%;
+            height: auto;
+        }
+
+        nav {
+            background-color: transparent;
+            color: #000;
+            padding: 4px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999;
+            transition: background-color 0.3s ease, border-bottom 0.3s ease;
+        }
+
+        nav.scrolled {
+            background-color: #fff;
+            border-bottom: 1px solid #000;
+            transition: background-color 0.3s ease, border-bottom 0.3s ease;
+        }
+
+        nav .logo {
+            font-size: 35px;
+            font-weight: 700;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 6px;
+        }
+
+        nav ul li a {
+            color: #000;
+            text-decoration: none;
+            font-size: 20px;
+            padding: 10px 14px;
+        }
+
+        nav ul li a:hover {
+            text-decoration: none;
+            background: #fef0e5;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 50px;
+            font-weight: 800;
+        }
+
+        .cta {
+            text-align: center;
+            margin-top: 40px;
+            color: #666;
+            font-size: 22px;
+            width: 70%;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            line-height: 1.4;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .cta-button {
+            background-color: #333;
+            color: #fff;
+            padding: 12px 30px;
+            font-size: 18px;
+            border-radius: 30px;
+            text-decoration: none;
+            margin: 0 0px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #666;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .feature-section {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            margin: 20px 0;
+            border: 1px solid #000;
+            transition: 0.2s ease-in-out;
+        }
+
+        .feature-section:hover {
+            transform: translate(3px, -3px);
+            transition: 0.2s ease-in-out;
+            box-shadow: -6px 6px 0px rgba(0, 0, 0, 1);
+        }
+
+        .feature-title {
+            font-size: 28px;
+            color: #000;
+            margin-bottom: 20px;
+        }
+
+        .feature-description {
+            font-size: 20px;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: transparent;
+            color: #000;
+        }
+    </style>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo"><a style="text-decoration: none; color: #000;" href="https://zandenkoh.github.io/cheatcode/">CheatCode</a></div>
+        <ul>
+            <li><a href="https://zandenkoh.github.io/cheatcode/Python/">Python</a></li>
+            <li><a href="https://zandenkoh.github.io/cheatcode/JavaScript/">JavaScript</a></li>
+            <li><a href="https://zandenkoh.github.io/cheatcode/Java/">Java</a></li>
+            <li><a href="https://zandenkoh.github.io/cheatcode/Cpp/">C++</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header with Call to Action -->
+<header>
+    <div class="header-section">
+        <h1>404 - Page Not Found</h1>
+        <p class="cta" style="text-align: left; width: 100%;">
+            Oops! It seems the page you are looking for doesn't exist. 
+            You can go back to the homepage or explore our available resources below.
+        </p>
+        <div class="cta-buttons" style="text-align: left; justify-content: left;">
+            <a href="https://zandenkoh.github.io/cheatcode/" class="cta-button">Go to home</a>
+        </div>
+    </div>
+    <img class="header-image" src="https://embed-ssl.wistia.com/deliveries/a056afbed3974a1c593a95005624d0f88ababe5d.jpg" alt="404 error illustration">
+</header>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>Made with ❤️ © 2024 CheatCode</p>
+    </footer>
+
+    <script>
+        // Function to change nav bar style on scroll
+        window.onscroll = function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        };
+    </script>
+</body>
+
+</html>
