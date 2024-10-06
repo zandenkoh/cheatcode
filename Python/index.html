@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a47fae704c.js" crossorigin="anonymous"></script>
+    <link rel="icon" type="image/png" href="https://zandenkoh.github.io/cheatcode/cheatcode.jpg">
 </head>
 
 <body>
@@ -90,6 +91,33 @@
             font-weight: 800;
         }
 
+        /* Tab button styling */
+
+        .tab-button {
+            background-color: transparent;
+            border: 1px solid transparent;
+            outline: none;
+            padding: 14px 50px;
+            margin: 0 5px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 0px;
+            transition: 0.2s ease;
+            width: 200px;
+            color: #555;
+        }
+
+        .tab-button.active {
+            background-color: #f6e8df;
+            color: #000;
+            font-weight: 600;
+            border-bottom: 1px solid #777;
+        }
+
+        .tab-button:hover {
+            color: #3b10e4;
+        }
+
         input {
             width: 70%;
             padding: 14px 22px;
@@ -100,16 +128,16 @@
             font-size: 20px;
             background: #fef0e5;
         }
-        
+
         input:hover {
             opacity: 0.8;
         }
-        
+
         input:focus {
             opacity: 1;
             background: #fff;
         }
-        
+
         #searchButton {
             width: 50px;
             height: 50px;
@@ -119,7 +147,7 @@
             background: #000;
             cursor: pointer;
         }
-        
+
         #searchButton i {
             font-size: 20px;
             color: #fff;
@@ -139,23 +167,31 @@
             border: 1px solid #000;
             transition: 0.2s ease-in-out;
         }
-        
+
         .cheat-section:hover {
             transform: translate(3px, -3px);
             transition: 0.2s ease-in-out;
             box-shadow: -6px 6px 0px rgba(0, 0, 0, 1);
-
         }
 
         .section-title {
             font-size: 25px;
             color: #000;
-            font-weight: 500;
+            font-weight: 800;
         }
 
         .section-description {
             margin-bottom: 10px;
             font-style: ;
+            color: #000;
+            font-size: 20px;
+        }
+
+        ul {
+            padding: 0 25px;
+        }
+
+        li {
             color: #666;
             font-size: 20px;
         }
@@ -195,23 +231,37 @@
         </ul>
     </nav>
 
-<!-- Header with Search Box -->
-<header>
-    <h1>Python</h1>
-    <p style="margin-bottom: 20px; font-size: 22px; color: #666; font-weight: 500; width: 60%; margin-left: 50%; transform: translateX(-50%); line-height: 1.1">Explore essential Python syntax and programming concepts with this concise cheat sheet. Perfect for beginners and experienced programmers alike, it provides quick access to the core features of Python.</p>
-    <div style="align-items: center; text-align: center; margin-left: 50%; transform: translateX(-50%); margin-bottom: 50px;">
-        <input type="text" id="searchBox" placeholder="Search Python Syntax..." onkeyup="handleKey(event)">
-        <button id="searchButton" onclick="searchCheatSheet()" style="margin-left: 2px;"><i class="fa-solid fa-magnifying-glass"></i></button>
-    </div>
-    <div id="noResults" style="display: none; color: red; margin-top: 10px;">Oops! This search request doesn't seem to match anything. Try again! </div>
-</header>
+    <!-- Header with Search Box -->
+    <header>
+        <h1>Python</h1>
+        <p style="margin-bottom: 40px; font-size: 22px; color: #888; font-weight: 400; width: 50%; margin-left: 50%; transform: translateX(-50%); line-height: 1.1;">Explore essential Python syntax and programming concepts with this concise cheat sheet. Perfect for beginners and experienced programmers alike, it provides quick access to the core features of Python.</p>
+        <div style="align-items: center; text-align: center; margin-left: 50%; transform: translateX(-50%); margin-bottom: 20px;">
+            <button class="tab-button active" id="syntaxTab" onclick="showTab('syntax')">Syntax</button>
+            <button class="tab-button" id="conceptsTab" onclick="showTab('concepts')">Concepts</button>
+        </div>
+        <div style="align-items: center; text-align: center; margin-left: 50%; transform: translateX(-50%); margin-bottom: 30px;">
+            <input type="text" id="searchBox" placeholder="Search syntax..." onkeyup="handleKey(event)">
+            <button id="searchButton" onclick="searchCheatSheet()" style="margin-left: 2px;"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <div id="noResults" style="display: none; color: red; margin-top: 10px;">Oops! This search request doesn't seem to match anything. Try again! </div>
+    </header>
 
     <!-- Main Content -->
     <main>
         <!-- Base Types -->
         <section class="cheat-section" id="base-types">
             <h2 class="section-title">Base Types</h2>
-            <p class="section-description">Basic data types in Python include integers, floats, booleans, and strings.</p>
+            <p class="section-description">
+                Base types are the fundamental data types in Python, representing basic values that can be used to construct more complex structures. Understanding these types is essential for efficient programming.
+                <ul>
+                    <li><strong>Integers:</strong> Integers are whole numbers that can be positive, negative, or zero. They are used for counting and indexing, making them a vital type for loop counters and array indexing.</li>
+                    <li><strong>Floats:</strong> Floats are numbers that contain decimal points or are expressed in exponential form. They are crucial for mathematical calculations requiring precision, such as scientific computations or financial calculations.</li>
+                    <li><strong>Booleans:</strong> Booleans represent truth values and can either be <code>True</code> or <code>False</code>. They are widely used in conditional statements and logical operations, enabling decision-making in code.</li>
+                    <li><strong>Strings:</strong> Strings are sequences of characters used to represent textual data. They can be manipulated in various ways, such as concatenation, slicing, and formatting, making them versatile for handling user input and
+                        output.
+                    </li>
+                </ul>
+            </p>
             <div class="section-content">
                 <pre>
 # Integer
@@ -232,7 +282,19 @@ message = "Hello, World!"
         <!-- Container Types -->
         <section class="cheat-section" id="container-types">
             <h2 class="section-title">Container Types</h2>
-            <p class="section-description">Containers store multiple values. Common containers are lists, tuples, sets, and dictionaries.</p>
+            <p class="section-description">
+                Container types in Python are designed to hold collections of items, allowing for efficient data management. Each type has its characteristics, making them suitable for different use cases.
+                <ul>
+                    <li><strong>Lists:</strong> Lists are ordered collections that can hold a mix of different data types. They are mutable, meaning their contents can be changed after creation. Lists are ideal for maintaining sequences of items, such as
+                        user inputs or results of computations.</li>
+                    <li><strong>Tuples:</strong> Tuples are similar to lists but are immutable, meaning once they are created, their contents cannot be altered. This property makes tuples useful for fixed collections of items, such as coordinates or settings
+                        that should not change.</li>
+                    <li><strong>Dictionaries:</strong> Dictionaries store key-value pairs in an unordered manner, where each key must be unique. They are extremely useful for associative arrays and allow for quick lookups of values based on keys, making them
+                        ideal for representing structured data like user profiles or configuration settings.</li>
+                    <li><strong>Sets:</strong> Sets are unordered collections of unique elements. They are primarily used to eliminate duplicate values and perform mathematical set operations such as union, intersection, and difference. Sets are particularly
+                        useful when the uniqueness of elements is essential.</li>
+                </ul>
+            </p>
             <div class="section-content">
                 <pre>
 # List
@@ -253,7 +315,15 @@ unique_items = {1, 2, 3}
         <!-- Identifiers and Variable Assignment -->
         <section class="cheat-section" id="identifiers">
             <h2 class="section-title">Identifiers</h2>
-            <p class="section-description">Identifiers are names given to entities in Python. They follow specific naming rules.</p>
+            <p class="section-description">
+                Identifiers in Python are names assigned to variables, functions, classes, and other entities. Proper naming conventions enhance code readability and maintainability.
+                <ul>
+                    <li>Identifiers must start with a letter (either lowercase or uppercase) or an underscore (_). This rule ensures that identifiers are easily distinguishable from numerical values.</li>
+                    <li>After the first character, identifiers can include letters, digits (0-9), and underscores. However, they cannot start with a digit, as this could cause confusion in interpretation.</li>
+                    <li>Identifiers are case-sensitive, meaning <code>myVariable</code> and <code>myvariable</code> are treated as two distinct identifiers. This feature allows for greater flexibility but also requires careful naming to avoid confusion.</li>
+                    <li>Avoid using Python's reserved keywords, such as <code>if</code>, <code>else</code>, <code>while</code>, etc., as identifiers to prevent syntax errors.</li>
+                </ul>
+            </p>
             <div class="section-content">
                 <pre>
 # Naming rules:
@@ -268,7 +338,15 @@ my_variable = 10
         <!-- Variable Assignments -->
         <section class="cheat-section" id="variable-assignment">
             <h2 class="section-title">Variable Assignments</h2>
-            <p class="section-description">Variables are assigned using the equals sign (`=`).</p>
+            <p class="section-description">
+                Variable assignments in Python are how you store data for later use. The equals sign (<code>=</code>) is used to assign values to variables. Understanding variable assignments is crucial for effective programming, as it helps manage data
+                flow within your applications.
+                <ul>
+                    <li><strong>Single assignment:</strong> This occurs when you assign one value to a variable. It is the most common form of assignment.</li>
+                    <li><strong>Multiple assignment:</strong> Python allows you to assign values to multiple variables simultaneously, making your code concise and enhancing readability. This feature is particularly useful for initialising several related
+                        variables in one line.</li>
+                </ul>
+            </p>
             <div class="section-content">
                 <pre>
 # Single assignment
@@ -283,7 +361,15 @@ a, b, c = 1, 2, 3
         <!-- Conversions -->
         <section class="cheat-section" id="conversions">
             <h2 class="section-title">Conversions</h2>
-            <p class="section-description">Data types can be converted using built-in functions.</p>
+            <p class="section-description">
+                Type conversion in Python allows you to change the data type of a value. This is especially useful when performing operations that involve multiple data types. Python provides built-in functions to facilitate these conversions, making it easy to work
+                with various data types interchangeably.
+                <ul>
+                    <li><strong>String conversion:</strong> The <code>str()</code> function converts a value into a string format. This conversion is useful when you want to concatenate numbers and text or display them together.</li>
+                    <li><strong>Integer conversion:</strong> The <code>int()</code> function converts a string or a float to an integer, truncating any decimal values. This is useful for situations where whole numbers are required.</li>
+                    <li><strong>Float conversion:</strong> The <code>float()</code> function converts a string or an integer into a floating-point number, which is beneficial when performing mathematical operations that require decimal precision.</li>
+                </ul>
+            </p>
             <div class="section-content">
                 <pre>
 # Converting to string
@@ -303,7 +389,15 @@ float_value = float(str_value)
         <!-- Boolean Logic -->
         <section class="cheat-section" id="boolean-logic">
             <h2 class="section-title">Boolean Logic</h2>
-            <p class="section-description">Boolean values can be combined using logical operators.</p>
+            <p class="section-description">
+                Boolean logic is fundamental in programming for controlling the flow of execution based on conditions. Python provides several logical operators to combine or modify boolean values, enabling complex decision-making in your code.
+                <ul>
+                    <li><strong>AND:</strong> The <code>and</code> operator returns <code>True</code> if both operands are true; otherwise, it returns <code>False</code>. This is useful for ensuring that multiple conditions must be met.</li>
+                    <li><strong>OR:</strong> The <code>or</code> operator returns <code>True</code> if at least one of the operands is true; it returns <code>False</code> only if both operands are false. This operator is helpful when you want to check for
+                        at least one condition being true.</li>
+                    <li><strong>NOT:</strong> The <code>not</code> operator negates the boolean value of its operand. If the operand is true, <code>not</code> makes it false, and vice versa. This is useful for reversing the logic of conditions.</li>
+                </ul>
+            </p>
             <div class="section-content">
                 <pre>
 # Logical operators
@@ -325,7 +419,13 @@ result = not x  # False
         <!-- Statements Blocks -->
         <section class="cheat-section" id="statements-blocks">
             <h2 class="section-title">Statements Blocks</h2>
-            <p class="section-description">Statements are grouped into blocks using indentation.</p>
+            <p class="section-description">
+                In Python, statements are grouped into blocks, which are defined by indentation. Properly structuring your code into blocks makes it more readable and maintains the logical flow.
+                <ul>
+                    <li>Code within a block must be indented consistently to indicate that it belongs to the same statement. This feature of Python enforces clean and readable code formatting.</li>
+                    <li>Blocks are commonly used in conditional statements, loops, and function definitions. Understanding how to create and use blocks is crucial for effective Python programming.</li>
+                </ul>
+            </p>
             <div class="section-content">
                 <pre>
 # Defining a block
@@ -340,7 +440,15 @@ print("This is outside the block")
         <!-- Modules/Names Imports -->
         <section class="cheat-section" id="modules-imports">
             <h2 class="section-title">Modules/Names Imports</h2>
-            <p class="section-description">Modules can be imported using the `import` statement.</p>
+            <p class="section-description">
+                Python modules are files containing Python code, which can include functions, classes, and variables. Using modules allows for code reusability and organisation.
+                <ul>
+                    <li><strong>Importing an entire module:</strong> The <code>import</code> statement allows you to include an entire module in your code, enabling access to all its functions and variables.</li>
+                    <li><strong>Importing specific functions:</strong> You can import specific functions from a module using the <code>from ... import ...</code> syntax. This approach can make your code cleaner by reducing the need to prefix function calls
+                        with the module name.</li>
+                    <li>Once imported, you can use the functions or variables defined in the module as if they were part of your code. This feature promotes modular programming, which is essential for maintaining and scaling larger applications.</li>
+                </ul>
+            </p>
             <div class="section-content">
                 <pre>
 # Importing an entire module
@@ -358,7 +466,15 @@ result = sqrt(16)  # 4.0
         <!-- Conditional Statements -->
         <section class="cheat-section" id="conditional-statements">
             <h2 class="section-title">Conditional Statements</h2>
-            <p class="section-description">Control the flow using `if`, `elif`, and `else`.</p>
+            <p class="section-description">
+                Conditional statements allow you to execute certain blocks of code based on specific conditions. They are essential for controlling the flow of your program and enabling dynamic behaviour.
+                <ul>
+                    <li>The <code>if</code> statement checks a condition and executes the corresponding block if the condition is true.</li>
+                    <li>The <code>elif</code> statement (short for "else if") allows you to check multiple conditions sequentially, executing the block of the first true condition.</li>
+                    <li>The <code>else</code> statement executes a block of code if none of the preceding conditions were true, providing a default action.</li>
+                    <li>Understanding how to structure conditional statements effectively enables you to implement complex decision-making processes in your code.</li>
+                </ul>
+            </p>
             <div class="section-content">
                 <pre>
 if x > 10:
@@ -374,7 +490,16 @@ else:
         <!-- Maths -->
         <section class="cheat-section" id="maths">
             <h2 class="section-title">Maths</h2>
-            <p class="section-description">Basic arithmetic operations and math functions.</p>
+            <p class="section-description">
+                Mathematics in Python encompasses basic arithmetic operations and more complex mathematical functions. Understanding these operations is foundational for performing calculations and developing algorithms.
+                <ul>
+                    <li><strong>Arithmetic operations:</strong> Python supports standard operations like addition (+), subtraction (-), multiplication (*), and division (/). These operations can be applied to integers and floats, making it easy to perform
+                        calculations.
+                    </li>
+                    <li><strong>Using math functions:</strong> The <code>math</code> module provides access to advanced mathematical functions, such as <code>sqrt()</code> for square roots, <code>sin()</code> for sine, and others. Importing the <code>math</code>                        module expands your capabilities significantly, allowing for complex mathematical computations.</li>
+                    <li>Mastering these operations and functions is crucial for scientific programming, data analysis, and any application requiring numerical computations.</li>
+                </ul>
+            </p>
             <div class="section-content">
                 <pre>
 # Arithmetic operations
@@ -396,7 +521,15 @@ sqrt_value = math.sqrt(25)  # Square root
         <!-- Loops -->
         <section class="cheat-section" id="loops">
             <h2 class="section-title">Loops</h2>
-            <p class="section-description">Loops in Python are used to iterate over sequences, such as lists, tuples, and strings.</p>
+            <p class="section-description">
+                Loops in Python are structures that allow you to repeat a block of code multiple times, facilitating automation and reducing redundancy in your code.
+                <ul>
+                    <li><strong>For loops:</strong> The <code>for</code> loop iterates over a sequence (like a list or a string) or generates a sequence using the <code>range()</code> function. This loop is ideal for scenarios where you know the number of
+                        iterations in advance.</li>
+                    <li><strong>While loops:</strong> The <code>while</code> loop continues to execute as long as a specified condition is true. This loop is particularly useful when the number of iterations is not predetermined and depends on dynamic conditions.</li>
+                    <li>Both types of loops can control the flow of your program effectively, enabling you to automate repetitive tasks and manage collections of data efficiently.</li>
+                </ul>
+            </p>
             <div class="section-content">
                 <pre>
 # For loop
@@ -415,7 +548,14 @@ while i < 5:
         <!-- Functions -->
         <section class="cheat-section" id="functions">
             <h2 class="section-title">Functions</h2>
-            <p class="section-description">Functions are defined using the `def` keyword.</p>
+            <p class="section-description">
+                Functions in Python are reusable blocks of code that perform specific tasks. They allow for better organisation of code, enabling modular programming.
+                <ul>
+                    <li>Functions are defined using the <code>def</code> keyword, followed by the function name and parentheses that may contain parameters.</li>
+                    <li>Parameters allow functions to accept inputs, making them versatile and applicable in various situations. You can also define default values for parameters, providing flexibility in how the function can be called.</li>
+                    <li>Once defined, a function can be called from anywhere in your code, reducing redundancy and promoting code reuse. This capability is crucial for maintaining and scaling larger applications.</li>
+                </ul>
+            </p>
             <div class="section-content">
                 <pre>
 # Function definition
@@ -431,7 +571,17 @@ message = greet("Alice")  # "Hello, Alice!"
         <!-- String Operations -->
         <section class="cheat-section" id="string-operations">
             <h2 class="section-title">String Operations</h2>
-            <p class="section-description">Common operations on strings include concatenation, slicing, and formatting.</p>
+            <p class="section-description">
+                String operations in Python involve manipulating textual data. Strings are widely used for user input, output, and data processing, making string operations fundamental to programming.
+                <ul>
+                    <li><strong>String concatenation:</strong> You can combine two or more strings using the + operator. This operation is essential for constructing messages and formatting output dynamically.</li>
+                    <li><strong>String slicing:</strong> Slicing allows you to extract a portion of a string using a specific range of indices. This feature is useful for manipulating substrings, such as extracting names or specific data points from a larger
+                        text.
+                    </li>
+                    <li><strong>String formatting:</strong> Python supports various methods for formatting strings, such as f-strings, which allow you to embed expressions inside string literals. This capability enhances the readability and maintainability
+                        of your output.</li>
+                </ul>
+            </p>
             <div class="section-content">
                 <pre>
 # String concatenation
@@ -450,7 +600,15 @@ formatted = f"Hello, {name}!"  # f-string
         <!-- File Handling -->
         <section class="cheat-section" id="file-handling">
             <h2 class="section-title">File Handling</h2>
-            <p class="section-description">Opening, reading, and writing files.</p>
+            <p class="section-description">
+                File handling in Python involves reading from and writing to files, enabling persistent data storage. Mastering file operations is essential for applications that require data logging, configuration management, or user data processing.
+                <ul>
+                    <li>Files can be opened using the <code>open()</code> function, which requires the filename and the mode (e.g., read <code>r</code>, write <code>w</code>). The <code>with</code> statement is recommended for file operations, as it ensures
+                        that the file is properly closed after its suite finishes.</li>
+                    <li>When writing to a file, you can use the <code>write()</code> method to add text. This process allows for saving data, logging messages, or generating output files.</li>
+                    <li>To read from a file, the <code>read()</code> method retrieves the file’s contents, which can then be processed or displayed. Proper error handling should be implemented to manage scenarios where the file may not exist.</li>
+                </ul>
+            </p>
             <div class="section-content">
                 <pre>
 # Writing to a file
@@ -467,7 +625,14 @@ with open("file.txt", "r") as file:
         <!-- Errors and Exceptions -->
         <section class="cheat-section" id="errors-exceptions">
             <h2 class="section-title">Errors and Exceptions</h2>
-            <p class="section-description">Handling exceptions using `try` and `except`.</p>
+            <p class="section-description">
+                Error handling in Python is vital for building robust applications. It allows you to manage unexpected issues gracefully, preventing your program from crashing.
+                <ul>
+                    <li>Exceptions are errors that occur during the execution of your code. Python provides a mechanism to handle these exceptions using the <code>try</code> and <code>except</code> blocks.</li>
+                    <li>The <code>try</code> block contains code that may potentially raise an exception. If an exception occurs, Python jumps to the <code>except</code> block, where you can define how to handle the error.</li>
+                    <li>This structured approach to error handling enhances user experience by providing informative messages or alternative flows rather than abrupt crashes.</li>
+                </ul>
+            </p>
             <div class="section-content">
                 <pre>
 try:
@@ -481,7 +646,14 @@ except ZeroDivisionError:
         <!-- List Comprehensions -->
         <section class="cheat-section" id="list-comprehensions">
             <h2 class="section-title">List Comprehensions</h2>
-            <p class="section-description">Creating lists in a concise way.</p>
+            <p class="section-description">
+                List comprehensions provide a concise way to create lists in Python. They enhance readability and can reduce the amount of code you write for generating lists.
+                <ul>
+                    <li>A list comprehension consists of an expression followed by a <code>for</code> clause and optionally, additional <code>if</code> clauses. This structure allows you to create lists in a single line.</li>
+                    <li>List comprehensions can improve performance by avoiding the need for explicit loops, making your code faster and more efficient.</li>
+                    <li>They are especially useful for transforming data or filtering elements based on conditions, making your data processing tasks simpler and cleaner.</li>
+                </ul>
+            </p>
             <div class="section-content">
                 <pre>
 # List comprehension
@@ -493,7 +665,14 @@ squares = [x**2 for x in range(10)]  # [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
         <!-- Lambda Functions -->
         <section class="cheat-section" id="lambda-functions">
             <h2 class="section-title">Lambda Functions</h2>
-            <p class="section-description">Anonymous functions defined with `lambda` keyword.</p>
+            <p class="section-description">
+                Lambda functions are small, anonymous functions defined using the <code>lambda</code> keyword. They are useful for creating simple functions on-the-fly without formally defining them using <code>def</code>.
+                <ul>
+                    <li>Lambda functions can take any number of arguments but can only have a single expression. This feature makes them ideal for short operations or callbacks.</li>
+                    <li>They are often used in higher-order functions like <code>map()</code>, <code>filter()</code>, and <code>sorted()</code>, where you need to pass a function as an argument.</li>
+                    <li>While lambda functions are convenient, they should be used judiciously, as overusing them can lead to less readable code.</li>
+                </ul>
+            </p>
             <div class="section-content">
                 <pre>
 # Lambda function
@@ -506,7 +685,16 @@ result = add(5, 3)  # 8
         <!-- Dictionaries and Sets -->
         <section class="cheat-section" id="dictionaries-sets">
             <h2 class="section-title">Dictionaries and Sets</h2>
-            <p class="section-description">Key-value pairs and unique collections.</p>
+            <p class="section-description">
+                Dictionaries and sets are essential data structures in Python, each serving distinct purposes for data storage and management.
+                <ul>
+                    <li><strong>Dictionaries:</strong> Dictionaries consist of key-value pairs, enabling fast lookups, insertions, and deletions. Keys must be unique, and they can be of any immutable data type (like strings, numbers, or tuples). This structure
+                        is ideal for representing structured data, such as user profiles or configuration settings.</li>
+                    <li><strong>Sets:</strong> Sets are collections of unique elements, allowing you to store items without duplicates. They support mathematical operations like union, intersection, and difference, making them useful for tasks involving unique
+                        items or membership tests.</li>
+                    <li>Both data structures enhance the capabilities of your applications by providing efficient ways to manage and manipulate data.</li>
+                </ul>
+            </p>
             <div class="section-content">
                 <pre>
 # Dictionary
@@ -522,58 +710,228 @@ print(unique_numbers)  # {1, 2, 3}
 
     </main>
 
-    <!-- Footer -->
-    <footer>
+    <footer id="first-foot">
         <p>Made with ❤️ © 2024 CheatCode</p>
     </footer>
 
-    <!-- JavaScript -->
-    <script>
-// Function to change nav bar style on scroll
-window.onscroll = function() {
-    const nav = document.querySelector('nav');
-    if (window.scrollY > 50) { // Change 50 to whatever scroll distance you prefer
-        nav.classList.add('scrolled');
-    } else {
-        nav.classList.remove('scrolled');
-    }
-};
+    <div id="concepts-container" style="display: none; max-width: 1000px; margin: 0 auto; padding-bottom: 50px;">
+        <!-- Object-Oriented Programming (OOP) -->
+        <section class="cheat-section" id="object-oriented-concepts">
+            <h2 class="section-title">Object-Oriented Programming (OOP)</h2>
+            <p class="section-description">
+                Python supports Object-Oriented Programming (OOP), which organises code around objects rather than actions, and data rather than logic. It promotes code reusability and is ideal for modeling real-world systems. Key OOP concepts include:
+                <ul>
+                    <li><strong>Classes:</strong> Blueprints for creating objects (instances). A class defines the properties and behaviours (methods) of an object.</li>
+                    <li><strong>Inheritance:</strong> A mechanism for one class (child class) to inherit the properties and methods of another class (parent class), allowing code reuse and a hierarchical organisation.</li>
+                    <li><strong>Polymorphism:</strong> The ability of different classes to be treated as instances of the same class through shared interfaces, especially useful when classes override inherited methods.</li>
+                </ul>
+            </p>
+            <div class="section-content">
+                <pre>
+# Class definition
+class Animal:
+    def __init__(self, name):
+        self.name = name
 
-// Function to handle Enter key press
-function handleKey(event) {
-    if (event.key === 'Enter') {
-        searchCheatSheet();
-    }
-}
+    def speak(self):
+        return f"{self.name} makes a sound"
 
-// Function to search and filter sections based on user input
-function searchCheatSheet() {
-    const input = document.getElementById('searchBox').value.toLowerCase();
-    const sections = document.querySelectorAll('.cheat-section');
-    let hasResults = false;
+# Inheritance
+class Dog(Animal):
+    def speak(self):
+        return f"{self.name} barks"
+        </pre>
+            </div>
+        </section>
 
-    sections.forEach(section => {
-        const title = section.querySelector('.section-title').innerText.toLowerCase();
-        const content = section.querySelector('.section-content').innerText.toLowerCase();
-        
-        if (title.includes(input) || content.includes(input)) {
-            section.style.display = ''; // Show the matching section
-            hasResults = true; // There is at least one result
-        } else {
-            section.style.display = 'none'; // Hide the non-matching section
-        }
-    });
+        <!-- Functional Programming -->
+        <section class="cheat-section" id="functional-programming">
+            <h2 class="section-title">Functional Programming</h2>
+            <p class="section-description">
+                Python supports functional programming, a paradigm where programs are constructed by applying and composing functions. This style emphasises the use of pure functions, immutability, and avoiding state changes. Common functional programming tools in Python
+                include:
+                <ul>
+                    <li><strong>Lambdas:</strong> Anonymous, inline functions defined using the <code>lambda</code> keyword, often used for short operations.</li>
+                    <li><strong>Map:</strong> Applies a function to each element of a sequence and returns a list of results.</li>
+                    <li><strong>Filter:</strong> Filters a sequence based on a condition, returning a new list of elements that meet the condition.</li>
+                    <li><strong>Reduce:</strong> Applies a function cumulatively to the items of a sequence to reduce it to a single value (requires the <code>functools</code> module).</li>
+                </ul>
+            </p>
+            <div class="section-content">
+                <pre>
+# Using lambda and map
+numbers = [1, 2, 3, 4]
+squares = list(map(lambda x: x ** 2, numbers))  # [1, 4, 9, 16]
 
-    // Display or hide the no results message
-    const noResultsMessage = document.getElementById('noResults');
-    if (!hasResults) {
-        noResultsMessage.style.display = 'block'; // Show the message
-    } else {
-        noResultsMessage.style.display = 'none'; // Hide the message
-    }
-}
+# Using filter
+evens = list(filter(lambda x: x % 2 == 0, numbers))  # [2, 4]
+        </pre>
+            </div>
+        </section>
 
-    </script>
+        <!-- Decorators -->
+        <section class="cheat-section" id="decorators">
+            <h2 class="section-title">Decorators</h2>
+            <p class="section-description">
+                Decorators are a powerful feature in Python that allow you to modify the behaviour of functions or methods. They are higher-order functions that take another function and extend or alter its behaviour without explicitly modifying it. Common use cases
+                include logging, timing, and access control.
+            </p>
+            <div class="section-content">
+                <pre>
+# Example of a decorator
+def decorator(func):
+    def wrapper():
+        print("Before the function call")
+        func()
+        print("After the function call")
+    return wrapper
+
+@decorator
+def say_hello():
+    print("Hello!")
+
+say_hello()
+
+# Output:
+# Before the function call
+# Hello!
+# After the function call
+        </pre>
+            </div>
+        </section>
+
+        <!-- Exceptions -->
+        <section class="cheat-section" id="exceptions">
+            <h2 class="section-title">Exceptions</h2>
+            <p class="section-description">
+                Exceptions in Python are used to handle errors that may occur during program execution. Python provides a range of built-in exception types for different error conditions. Exception handling helps to ensure that a program can gracefully deal with unexpected
+                situations without crashing:
+                <ul>
+                    <li><strong>Try-except:</strong> Code that might raise an error is placed inside the <code>try</code> block. If an exception occurs, it is caught by the corresponding <code>except</code> block.</li>
+                    <li><strong>Finally:</strong> A <code>finally</code> block can be used to specify cleanup actions that should run whether or not an exception occurred.</li>
+                </ul>
+            </p>
+            <div class="section-content">
+                <pre>
+try:
+    # Code that might raise an exception
+    result = 10 / 0
+except ZeroDivisionError:
+    print("Cannot divide by zero")
+finally:
+    print("This runs no matter what")
+        </pre>
+            </div>
+        </section>
+
+        <!-- Generators -->
+        <section class="cheat-section" id="generators">
+            <h2 class="section-title">Generators</h2>
+            <p class="section-description">
+                Generators are a special type of function in Python that yield a sequence of values one at a time, rather than returning them all at once. This makes generators highly memory efficient for working with large datasets or infinite sequences. They use the
+                <code>yield</code> keyword instead of <code>return</code>.
+            </p>
+            <div class="section-content">
+                <pre>
+# Generator example
+def count_up_to(max_value):
+    count = 1
+    while count <= max_value:
+        yield count
+        count += 1
+
+# Using the generator
+for number in count_up_to(5):
+    print(number)
+        </pre>
+            </div>
+        </section>
+
+
+        <!-- Footer -->
+        <footer>
+            <p>Made with ❤️ © 2024 CheatCode</p>
+        </footer>
+
+        <!-- JavaScript -->
+        <script>
+            // Function to change nav bar style on scroll
+            window.onscroll = function() {
+                const nav = document.querySelector('nav');
+                if (window.scrollY > 50) { // Change 50 to whatever scroll distance you prefer
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+            };
+
+            // Function to handle Enter key press
+            function handleKey(event) {
+                if (event.key === 'Enter') {
+                    searchCheatSheet();
+                }
+            }
+
+            // Function to search and filter sections based on user input
+            function searchCheatSheet() {
+                const input = document.getElementById('searchBox').value.toLowerCase();
+                const sections = document.querySelectorAll('.cheat-section');
+                let hasResults = false;
+
+                sections.forEach(section => {
+                    const title = section.querySelector('.section-title').innerText.toLowerCase();
+                    const content = section.querySelector('.section-content').innerText.toLowerCase();
+                    const description = section.querySelector('.section-description').innerText.toLowerCase(); // Get the description
+
+                    // Check if the input matches the title, content, or description
+                    if (title.includes(input) || content.includes(input) || description.includes(input)) {
+                        section.style.display = ''; // Show the matching section
+                        hasResults = true; // There is at least one result
+                    } else {
+                        section.style.display = 'none'; // Hide the non-matching section
+                    }
+                });
+
+                // Display or hide the no results message
+                const noResultsMessage = document.getElementById('noResults');
+                if (!hasResults) {
+                    noResultsMessage.style.display = 'block'; // Show the message
+                } else {
+                    noResultsMessage.style.display = 'none'; // Hide the message
+                }
+            }
+
+
+            function showTab(tab) {
+                const syntaxContainer = document.querySelector('main');
+                const conceptsContainer = document.getElementById('concepts-container');
+                const syntaxTab = document.getElementById('syntaxTab');
+                const conceptsTab = document.getElementById('conceptsTab');
+                const searchBox = document.getElementById('searchBox'); // Get the searchBox input element
+
+                if (tab === 'syntax') {
+                    // Show Syntax and hide Concepts
+                    syntaxContainer.style.display = 'block';
+                    conceptsContainer.style.display = 'none';
+                    syntaxTab.classList.add('active');
+                    conceptsTab.classList.remove('active');
+                    document.getElementById('first-foot').style.display = 'block';
+
+                    // Change the placeholder for the search box
+                    searchBox.placeholder = 'Search syntax...'; // Set the placeholder for syntax tab
+                } else {
+                    // Show Concepts and hide Syntax
+                    syntaxContainer.style.display = 'none';
+                    conceptsContainer.style.display = 'block';
+                    conceptsTab.classList.add('active');
+                    syntaxTab.classList.remove('active');
+                    document.getElementById('first-foot').style.display = 'none';
+
+                    // Change the placeholder for the search box
+                    searchBox.placeholder = 'Search concepts...'; // Set the placeholder for concepts tab
+                }
+            }
+        </script>
 </body>
 
 </html>
