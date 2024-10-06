@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a47fae704c.js" crossorigin="anonymous"></script>
-    <link rel="icon" type="image/png" href="https://zandenkoh.github.io/cheatcode/cheatcode.jpg">
+    <link rel="icon" type="image/jpg" href="https://zandenkoh.github.io/cheatcode/cheatcode.jpg">
 </head>
 
 <body>
@@ -34,6 +34,7 @@
             text-align: center;
             margin-bottom: 20px;
             margin-top: 80px;
+            
         }
 
         /* Navbar styling */
@@ -51,6 +52,8 @@
             width: 100%;
             z-index: 9999;
             transition: background-color 0.3s ease, border-bottom 0.3s ease;
+        
+            user-select: none;
         }
 
         nav.scrolled {
@@ -89,6 +92,7 @@
             color: #333;
             font-size: 50px;
             font-weight: 800;
+            user-select: none;
         }
 
         /* Tab button styling */
@@ -105,6 +109,7 @@
             transition: 0.2s ease;
             width: 200px;
             color: #555;
+            user-select: none;
         }
 
         .tab-button.active {
@@ -146,6 +151,7 @@
             border: 1px solid #333;
             background: #000;
             cursor: pointer;
+            user-select: none;
         }
 
         #searchButton i {
@@ -218,6 +224,88 @@
             background-color: transparent;
             color: #000;
         }
+
+        /* Responsive Styles */
+
+        @media (max-width: 768px) {
+            header {
+                margin-top: 40px;
+                /* Reduce top margin on smaller screens */
+            }
+            nav .logo {
+                font-size: 26px;
+            }
+            nav {
+                flex-direction: column;
+                /* Stack nav items vertically */
+                padding: 0;
+                /* Add padding */
+            }
+            nav ul li {
+                margin: 5px 0;
+                /* Reduce margin between list items */
+                display: none;
+            }
+            
+            h1 {
+                font-size: 36px;
+                margin-top: 80px;
+                margin-bottom: 20px;
+            }
+            .header-pp {
+                min-width: 80%;
+                display: none;
+            }
+            .tabs-buttons {
+                width: 80%;
+            }
+            .tab-button {
+                width: calc(50% - 5px);
+                /* Full width buttons */
+                margin: 5px 0;
+                /* Space between tab buttons */
+            }
+            .search-and-search {
+                width: 100vw;
+            }
+            input {
+                width: 70%;
+                /* Adjust input width for mobile */
+            }
+            #searchButton {
+                width: 50px;
+                /* Adjust size of the search button */
+                height: 50px;
+                /* Adjust size of the search button */
+            }
+            .cheat-section {
+                padding: 20px;
+                /* Reduce padding for sections */
+                margin: 10px 10px;
+                /* Reduce margin between sections */
+            }
+            .cheat-section:hover {
+                transform: translate(0);
+                box-shadow: none;
+            }
+            .section-title {
+                font-size: 22px;
+                /* Smaller font size for section titles */
+            }
+            .section-description,
+            li {
+                font-size: 18px;
+                /* Smaller font size for descriptions and list items */
+            }
+            pre {
+                font-size: 14px;
+                /* Smaller font size for preformatted text */
+            }
+            footer {
+                font-size: 14px;
+                /* Smaller font size for footer */
+            }
+        }
     </style>
 
     <!-- Navigation Bar -->
@@ -234,12 +322,12 @@
     <!-- Header with Search Box -->
     <header>
         <h1>Python</h1>
-        <p style="margin-bottom: 40px; font-size: 22px; color: #888; font-weight: 400; width: 50%; margin-left: 50%; transform: translateX(-50%); line-height: 1.1;">Explore essential Python syntax and programming concepts with this concise cheat sheet. Perfect for beginners and experienced programmers alike, it provides quick access to the core features of Python.</p>
-        <div style="align-items: center; text-align: center; margin-left: 50%; transform: translateX(-50%); margin-bottom: 20px;">
+        <p class="header-pp" style="margin-bottom: 40px; font-size: 22px; color: #888; font-weight: 400; width: 50%; margin-left: 50%; transform: translateX(-50%); line-height: 1.1;">Explore essential Python syntax and programming concepts with this concise cheat sheet. Perfect for beginners and experienced programmers alike, it provides quick access to the core features of Python.</p>
+        <div class="tabs-buttons" style="align-items: center; text-align: center; margin-left: 50%; transform: translateX(-50%); margin-bottom: 20px;">
             <button class="tab-button active" id="syntaxTab" onclick="showTab('syntax')">Syntax</button>
             <button class="tab-button" id="conceptsTab" onclick="showTab('concepts')">Concepts</button>
         </div>
-        <div style="align-items: center; text-align: center; margin-left: 50%; transform: translateX(-50%); margin-bottom: 30px;">
+        <div class="search-and-search" style="align-items: center; text-align: center; margin-left: 50%; transform: translateX(-50%); margin-bottom: 30px;">
             <input type="text" id="searchBox" placeholder="Search syntax..." onkeyup="handleKey(event)">
             <button id="searchButton" onclick="searchCheatSheet()" style="margin-left: 2px;"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
